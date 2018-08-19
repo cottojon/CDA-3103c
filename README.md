@@ -6,7 +6,7 @@ In this project, you are asked to write the core part of a mini processor simula
 
 
 
-**9 Functions Implemented in project.c: **
+###9 Functions Implemented in project.c:###
 
 
 •	instruction_fetch(…)
@@ -109,7 +109,7 @@ Value (Binary)	Meaning:
 
 
 
-**Operation of the spimcore**
+###Operation of the spimcore###
 
 For your convenience, here is how you could do it in UNIX environment. First compile:
 
