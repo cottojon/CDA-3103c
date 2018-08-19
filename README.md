@@ -12,9 +12,14 @@ In this project, you are asked to write the core part of a mini processor simula
 •	instruction_fetch(…)
 1.	Fetch the instruction addressed by PC from Mem and write it to instruction.
 2.	Return 1 if a halt condition occurs; otherwise, return 0.
+
+
 •	instruction_partition(…)
 1.	Partition instruction into several parts (op, r1, r2, r3, funct, offset, jsec).
 2.	Read line 41 to 47 of spimcore.c for more information.
+
+
+
 •	instruction_decode(…)
 1.	Decode the instruction using the opcode (op).
 2.	Assign the values of the control signals to the variables in the structure controls (See spimcore.h file).
@@ -25,35 +30,76 @@ The following table shows the meaning of the values of ALUOp.
 
 
 
-Value (Binary)	Meaning
+Value (Binary)	Meaning:
+
+
 000	ALU will do addition or “don’t care”
+
+
 001	ALU will do subtraction
+
+
 010	ALU will do “set less than” operation
+
+
 011	ALU will do “set less than unsigned” operation
+
+
 100	ALU will do “AND” operation
+
+
 101	ALU will do “OR” operation
+
+
 110	ALU will shift left extended_value by 16 bits
+
+
 111	The instruction is an R-type instruction
 
-
-
 3.	Return 1 if a halt condition occurs; otherwise, return 0.
+
+
+
+
 •	read_register(…)
 1.	Read the registers addressed by r1 and r2 from Reg, and write the read values to data1 and data2 respectively.
+
+
+
+
+
 •	sign_extend(…)
 1.	Assign the sign-extended value of offset to extended_value.
+
+
+
+
+
 •	ALU_operations(…)
 1.	Apply ALU operations on data1, and data2 or extended_value (determined by ALUSrc).
 2.	The operation performed is based on ALUOp and funct.
 3.	Apply the function ALU(…).
 4.	Output the result to ALUresult.
 5.	Return 1 if a halt condition occurs; otherwise, return 0.
+
+
+
+
+
 •	rw_memory(…)
 1.	Base on the value of MemWrite or MemRead to determine memory write operation or memory read operation.
 2.	Read the content of the memory location addressed by ALUresult to memdata.
 3.	Write the value of data2 to the memory location addressed by ALUresult.
 4.	Return 1 if a halt condition occurs; otherwise, return 0.
+
+
+
+
 •	write_register(…)
 1.	Write the data (ALUresult or memdata) to a register (Reg) addressed by r2 or r3.
+
+
+
+
 •	PC_update(…)
 1.	Update the program counter (PC).
